@@ -3,65 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Redirect</title>
+    <title>Job Offer - Apply Now</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, https://ibb.co/PsL7ZcrK);
-            text-align: center;
-            padding: 50px;
-            color: white;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
         .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-            max-width: 400px;
-            margin: auto;
-            color: black;
+            background-color: #ffffff;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
         }
-        .countdown {
-            font-size: 20px;
-            color: red;
+
+        h1 {
+            color: #ff6347;
             font-weight: bold;
-            margin-top: 15px;
-            display: none;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .apply-btn:hover {
+            background-color: #218838;
+        }
+
+        .partners {
+            margin-top: 30px;
+        }
+
+        .partners h2 {
+            color: #444;
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logos img {
+            width: 100px;
+            height: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .logos img:hover {
+            filter: grayscale(0%);
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>Welcome!</h1>
-        <p>Please wait while we redirect you...</p>
+        <h1>🚀 Join Our Team!</h1>
+        <p>We are looking for dynamic and passionate individuals to join our growing team. Elevate your career with us!</p>
+        <p><strong>Position:</strong> [Job Title]</p>
+        <p><strong>Location:</strong> [Job Location]</p>
+        <p><strong>Salary:</strong> [Salary Details]</p>
 
-        <!-- Countdown Timer -->
-        <p class="countdown" id="countdown">Redirecting in <span id="timer">3</span> seconds...</p>
+        <a href="https://goto.now/oUKhh" class="apply-btn">Apply Now</a>
+
+        <div class="partners">
+            <h2>Our Trusted Partners</h2>
+            <div class="logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png" alt="Apple">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Google_2015_logo.svg" alt="Google">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Amazon_logo.svg" alt="Amazon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Meta_Platforms_Inc._logo.svg" alt="Meta">
+            </div>
+        </div>
     </div>
-
-    <script>
-        const telegramLink = "https://t.me/+SC2I0l31_B84MjM1";
-
-        setTimeout(startCountdown, 3000); // पेज लोड होने के 3 सेकंड बाद काउंटडाउन स्टार्ट होगा
-
-        function startCountdown() {
-            document.getElementById("countdown").style.display = "block";
-
-            let timeLeft = 3;
-            let timer = document.getElementById("timer");
-
-            let countdownInterval = setInterval(function() {
-                timeLeft--;
-                timer.textContent = timeLeft;
-
-                if (timeLeft <= 0) {
-                    clearInterval(countdownInterval);
-                    window.location.href = telegramLink;
-                }
-            }, 1000);
-        }
-    </script>
-
 </body>
 </html>
